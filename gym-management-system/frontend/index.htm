@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gym Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>💪 Gym Management System</h1>
+</header>
+
+<nav>
+  <button class="tab active" data-tab="dashboard">Dashboard</button>
+  <button class="tab" data-tab="members">Members</button>
+  <button class="tab" data-tab="attendance">Attendance</button>
+  <button class="tab" data-tab="payments">Payments</button>
+</nav>
+
+<main>
+  <section id="dashboard" class="page active">
+    <div class="cards">
+      <div class="card">
+        <h3>Total Members</h3>
+        <p id="s-members">0</p>
+      </div>
+      <div class="card">
+        <h3>Present Today</h3>
+        <p id="s-present">0</p>
+      </div>
+      <div class="card">
+        <h3>Fees Paid</h3>
+        <p id="s-paid">0</p>
+      </div>
+      <div class="card">
+        <h3>Total Revenue</h3>
+        <p id="s-revenue">₹0</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="members" class="page">
+    <form id="member-form">
+      <input id="m-name" placeholder="Full name" required>
+      <input id="m-phone" placeholder="Phone">
+      <input id="m-email" placeholder="Email">
+      <select id="m-plan">
+        <option>Monthly</option>
+        <option>Quarterly</option>
+        <option>Yearly</option>
+      </select>
+      <button type="submit">Add Member</button>
+    </form>
+
+    <table id="members-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Plan</th>
+          <th>Joined</th>
+          <th>Fees</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section id="attendance" class="page">
+    <form id="attendance-form">
+      <select id="a-member" required></select>
+      <button type="submit">Mark Check-in</button>
+    </form>
+
+    <table id="attendance-table">
+      <thead>
+        <tr>
+          <th>Member</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section id="payments" class="page">
+    <form id="payment-form">
+      <select id="p-member" required></select>
+      <input id="p-amount" type="number" min="1" placeholder="Amount" required>
+      <select id="p-method">
+        <option>Cash</option>
+        <option>UPI</option>
+        <option>Card</option>
+      </select>
+      <button type="submit">Record Payment</button>
+    </form>
+
+    <table id="payments-table">
+      <thead>
+        <tr>
+          <th>Member</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Method</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
